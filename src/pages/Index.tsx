@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
@@ -24,6 +25,7 @@ const mockTextbooks = [
 ];
 
 export default function Index() {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedClass, setSelectedClass] = useState<number | null>(null);
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
@@ -64,7 +66,7 @@ export default function Index() {
                 <Icon name="Library" size={18} className="mr-2" />
                 Учебники
               </Button>
-              <Button variant="ghost" className="text-gray-700 hover:text-violet-600 font-medium">
+              <Button variant="ghost" className="text-gray-700 hover:text-violet-600 font-medium" onClick={() => navigate('/profile')}>
                 <Icon name="User" size={18} className="mr-2" />
                 Профиль
               </Button>
