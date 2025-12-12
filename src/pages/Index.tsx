@@ -134,7 +134,7 @@ export default function Index() {
                 key={subject.id}
                 className={`cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-scale-in border-0 ${subject.color}`}
                 style={{ animationDelay: `${index * 100}ms` }}
-                onClick={() => setSelectedSubject(selectedSubject === subject.name ? null : subject.name)}
+                onClick={() => navigate(`/subject?name=${encodeURIComponent(subject.name)}`)}
               >
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 mx-auto mb-3 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
